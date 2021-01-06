@@ -18,7 +18,7 @@ function player_update(){
     });
 }
 function block_update(get_image){
-    fabric.Image.fromUrl(get_image, function(Img){
+    fabric.Image.fromURL(get_image, function(Img){
         block_image=Img;
         block_image.scaleToWidth(block_image_width);
         block_image.scaleToHeight(block_image_height);
@@ -28,4 +28,59 @@ function block_update(get_image){
         });
         canvas.add(block_image);
     });
+}
+window.addEventListener("keydown", my_keydown);
+function my_keydown(e){
+    keypressed=e.keyCode;
+    console.log=keypressed;
+    if(e.shiftKey== true && keypressed=='80'){
+        block_image_height=block_image_height+10;
+        block_image_width=block_image_width+10;
+        document.getElementById("width").innerHTML=block_image_width;
+        document.getElementById("Height").innerHTML=block_image_height;
+        console.log("Shift+p");
+    }
+    if(e.shiftKey== true && keypressed=='77'){
+        block_image_height=block_image_height-10;
+        block_image_width=block_image_width-10;
+        document.getElementById("width").innerHTML=block_image_width;
+        document.getElementById("Height").innerHTML=block_image_height;
+        console.log("Shift+m");
+    }
+    if(keypressed=='76'){
+        block_update("captain_america_left_hand.png");
+        console.log("L pressed");
+    }
+    if(keypressed=='82'){
+        block_update("ironman_right_hand.png");
+        console.log("R pressed");
+    }
+    if(keypressed=='70'){
+        block_update("ironman_face.png");
+        console.log("F pressed");
+    }
+    if(keypressed=='66'){
+        block_update("spiderman_body.png");
+        console.log("B pressed");
+    }
+    if(keypressed=='72'){
+        block_update("hulk_legs.png");
+        console.log("H pressed");
+    }
+    if(keypressed=='84'){
+        block_update("thor_right_hand.png");
+        console.log("T pressed");
+    }
+    if(keypressed=='83'){
+        block_update("spiderman_legs.png");
+        console.log("S pressed");
+    }
+    if(keypressed=='75'){
+        block_update("hulkd_body.png");
+        console.log("K pressed");
+    }
+    if(keypressed=='87'){
+        block_update("thor_right_hand.png");
+        console.log("W pressed");
+    }
 }
