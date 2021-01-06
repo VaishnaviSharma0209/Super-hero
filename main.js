@@ -33,6 +33,22 @@ window.addEventListener("keydown", my_keydown);
 function my_keydown(e){
     keypressed=e.keyCode;
     console.log=keypressed;
+    if (keypressed=37){
+        //left();
+        console.log("left");
+    }
+    if (keypressed=38){
+        //up();
+        console.log("up");
+    }
+    if (keypressed=39){
+        //right();
+        console.log("right");
+    }
+    if (keypressed=40){
+        //down();
+        console.log("down");
+    }
     if(e.shiftKey== true && keypressed=='80'){
         block_image_height=block_image_height+10;
         block_image_width=block_image_width+10;
@@ -82,5 +98,37 @@ function my_keydown(e){
     if(keypressed=='87'){
         block_update("thor_right_hand.png");
         console.log("W pressed");
+    }
+}
+function up(){
+    if(player_y>=0){
+        player_y=player_y-block_image_height;
+        //console.log("x =" + player_x + "y =" + player_y);
+        canvas.remove(player_image);
+        player_update();
+    }
+}
+function down(){
+    if(player_y<=500){
+        player_y=player_y+block_image_height;
+        //console.log("x =" + player_x + "y =" + player_y);
+        canvas.remove(player_image);
+        player_update();
+    }
+}
+function left(){
+    if(player_x>=0){
+        player_x=player_x-block_image_width;
+        //console.log("x =" + player_x + "y =" + player_y);
+        canvas.remove(player_image);
+        player_update();
+    }
+}
+function right(){
+    if(player_x<=550){
+        player_x=player_x+block_image_width;
+        //console.log("x =" + player_x + "y =" + player_y);
+        canvas.remove(player_image);
+        player_update();
     }
 }
