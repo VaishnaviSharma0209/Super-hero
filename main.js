@@ -1,6 +1,6 @@
 var canvas=new fabric.Canvas("myCanvas");
-player_x=10;
-player_y=10;
+player_x=30;
+player_y=30;
 var player_image="";
 var block_image="";
 block_image_width=30;
@@ -32,21 +32,21 @@ function block_update(get_image){
 window.addEventListener("keydown", my_keydown);
 function my_keydown(e){
     keypressed=e.keyCode;
-    console.log=keypressed;
-    if (keypressed=37){
-        //left();
+    console.log(keypressed);
+    if (keypressed='37'){
+        left();
         console.log("left");
     }
-    if (keypressed=38){
-        //up();
+    if (keypressed='38'){
+        up();
         console.log("up");
     }
-    if (keypressed=39){
-        //right();
+    if (keypressed='39'){
+        right();
         console.log("right");
     }
-    if (keypressed=40){
-        //down();
+    if (keypressed='40'){
+        down();
         console.log("down");
     }
     if(e.shiftKey== true && keypressed=='80'){
@@ -101,34 +101,34 @@ function my_keydown(e){
     }
 }
 function up(){
-    if(player_y>=0){
-        player_y=player_y-block_image_height;
-        //console.log("x =" + player_x + "y =" + player_y);
-        canvas.remove(player_image);
-        player_update();
-    }
-}
-function down(){
-    if(player_y<=500){
-        player_y=player_y+block_image_height;
-        //console.log("x =" + player_x + "y =" + player_y);
-        canvas.remove(player_image);
-        player_update();
+    if (player_y>=30){
+    player_y=player_y-block_image_height;
+    console.log("Player x=" + player_x + "Y =" + player_y);
+    canvas.remove(player_image);
+    player_update();
     }
 }
 function left(){
-    if(player_x>=0){
+    if (player_x>=30){
         player_x=player_x-block_image_width;
-        //console.log("x =" + player_x + "y =" + player_y);
+        console.log("Player x=" + player_x + "Y =" + player_y);
         canvas.remove(player_image);
         player_update();
     }
 }
 function right(){
-    if(player_x<=550){
+    if (player_x<=850){
         player_x=player_x+block_image_width;
-        //console.log("x =" + player_x + "y =" + player_y);
+        console.log("Player x=" + player_x + "Y =" + player_y);
         canvas.remove(player_image);
         player_update();
+    }
+}
+function down(){
+    if (player_y<=500){
+    player_y=player_y+block_image_height;
+    console.log("Player x=" + player_x + "Y =" + player_y);
+    canvas.remove(player_image);
+    player_update();
     }
 }
