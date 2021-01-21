@@ -33,19 +33,19 @@ window.addEventListener("keydown", my_keydown);
 function my_keydown(e){
     keypressed=e.keyCode;
     console.log(keypressed);
-    if (keypressed='37'){
+    if (keypressed=='37'){
         left();
         console.log("left");
     }
-    if (keypressed='38'){
+    if (keypressed=='38'){
         up();
         console.log("up");
     }
-    if (keypressed='39'){
+    if (keypressed=='39'){
         right();
         console.log("right");
     }
-    if (keypressed='40'){
+    if (keypressed=='40'){
         down();
         console.log("down");
     }
